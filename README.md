@@ -303,10 +303,12 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 
 <img width="1523" height="181" alt="Screenshot 2026-04-13 191412" src="https://github.com/user-attachments/assets/af1bc105-8a2b-40a5-9d74-6852c657ce3f" />
 
-# Access the application below DNS name:
+# Access the application below URL:
 
 
-                                  ..\httpa409fb495a37944c5b1f4e1d28699697-1788859896.us-east-1.elb.amazonaws.comblood-donation-facts.html.html
+                                  
+
+# https://github.com/damodharbotta-devops/Blood-bank-application-project-deploy-in-Kubetnetes-KOPS-cluster/blob/master/httpa409fb495a37944c5b1f4e1d28699697-1788859896.us-east-1.elb.amazonaws.comblood-donation-facts.html.html
 
 
 <img width="1919" height="934" alt="Screenshot 2026-04-11 171930" src="https://github.com/user-attachments/assets/6d2052fc-d2a7-40cc-933e-fb33cad93b8d" />
