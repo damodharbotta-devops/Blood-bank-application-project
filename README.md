@@ -334,6 +334,8 @@ i) Deployment label and app-service label should be same label name.
          
 ii) Stateful set label and db-service label name should be same label name.
 
+       
+
 
   
 
