@@ -171,8 +171,7 @@ install required plugins and add docker Hub credentials in Jenkins CI server.
 <img width="1919" height="623" alt="Screenshot 2026-04-11 171331" src="https://github.com/user-attachments/assets/d03ad441-ff68-4155-8ef3-e932c1f73a2e" />
 
 •	Application deploy into containers is successful. Now access the application.
-•	Now access the application Public Ip address:1111
-        
+=>	Now access the application Public Ip address:1111
         
 <img width="1919" height="927" alt="Screenshot 2026-04-11 171810" src="https://github.com/user-attachments/assets/4402fce3-0e66-4a2e-b44b-103f31221e59" />
 <img width="1919" height="934" alt="Screenshot 2026-04-11 171930" src="https://github.com/user-attachments/assets/07b65661-c4e5-4119-8e98-06a6c95d37e5" />
