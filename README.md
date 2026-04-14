@@ -172,7 +172,7 @@ install required plugins and add docker Hub credentials in Jenkins CI server.
 
 •	Application deploy into containers is successful. Now access the application.
 •	Now access the application Public Ip address:1111
-        Click the URL to access the application:     http://44.201.8.157:1111/index.html
+        
         
 <img width="1919" height="927" alt="Screenshot 2026-04-11 171810" src="https://github.com/user-attachments/assets/4402fce3-0e66-4a2e-b44b-103f31221e59" />
 <img width="1919" height="934" alt="Screenshot 2026-04-11 171930" src="https://github.com/user-attachments/assets/07b65661-c4e5-4119-8e98-06a6c95d37e5" />
