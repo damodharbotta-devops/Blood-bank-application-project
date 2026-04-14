@@ -170,11 +170,43 @@ install required plugins and add docker Hub credentials in Jenkins CI server.
 
 <img width="1919" height="623" alt="Screenshot 2026-04-11 171331" src="https://github.com/user-attachments/assets/d03ad441-ff68-4155-8ef3-e932c1f73a2e" />
 
-=>	Application deploy into containers is successful. Now access the application.
-=>	Now access the application Public Ip address:1111
+• Application deploy into containers is successful. Now access the application.
+• Now access the application Public Ip address:1111
         
 <img width="1919" height="927" alt="Screenshot 2026-04-11 171810" src="https://github.com/user-attachments/assets/4402fce3-0e66-4a2e-b44b-103f31221e59" />
 <img width="1919" height="934" alt="Screenshot 2026-04-11 171930" src="https://github.com/user-attachments/assets/07b65661-c4e5-4119-8e98-06a6c95d37e5" />
+
+•	First Create an account using sign up option. Then we can see in data base our details have been stored.
+
+<img width="1886" height="923" alt="Screenshot 2026-04-11 172945" src="https://github.com/user-attachments/assets/ebc031d6-c826-4a55-b04f-6ec1457226ef" />
+<img width="1918" height="835" alt="Screenshot 2026-04-11 175233" src="https://github.com/user-attachments/assets/c10738a8-e6e2-4d3f-ba2a-c24a2c82aeae" />
+<img width="1909" height="929" alt="Screenshot 2026-04-11 175322" src="https://github.com/user-attachments/assets/b6afda80-5fee-4f57-bd08-da8e9048a0f2" />
+
+•	See the data base all the users and doners list in backend
+
+<img width="891" height="647" alt="Screenshot 2026-04-11 175031" src="https://github.com/user-attachments/assets/32afa874-ed3a-4c5a-bd30-86377a7c55a5" />
+<img width="806" height="790" alt="Screenshot 2026-04-11 175106" src="https://github.com/user-attachments/assets/ac2555cc-7d69-476b-9028-1d66c7218e28" />
+<img width="1362" height="408" alt="Screenshot 2026-04-11 175144" src="https://github.com/user-attachments/assets/f2544f01-7943-425c-b674-163b43ff4853" />
+
+                                             # Application Deploy in Kubernetes
+**As of now what we did:**
+
+•	Get the source code from GitHub and create CI/CD pipeline in Jenkins to automate the deployment process and create Docker images and tagged & push the images into docker hub registry. Then run the application in containers successfully. All this process we automate in Jenkins.
+•	Now deploy the same application in Kubernetes why means high availability and no down time, update the versions & Rollback to any versions.
+**Install Kubectl and Kops**:
+Kubectl:
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+mv kubectl /usr/local/bin
+kubectl version
+Kops: 
+curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+ chmod +x kops
+ mv kops /usr/local/bin/kops
+ kops version
+
+
+
         
          
 
