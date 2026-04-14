@@ -1,2 +1,2 @@
-                                               # Blood-bank-application-project-deploy-in-Kubetnetes-KOPS-cluster
+  # Blood-bank-application-project-deploy-in-Kubetnetes-KOPS-cluster
 
