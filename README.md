@@ -1,11 +1,13 @@
    # Blood-bank-application-project-deploy-in-Kubetnetes-KOPS-cluster
 
 # Client Requirement: Client required blood bank application. 
+
 1.	Inside application user can able to see all the information related to application.
 2.	New user can ably donate the blood and new user want blood; he/she can able to get the donor blood details.
 3.	New user account creation & existing user sign in option.
 
 # DevOps Engineers:
+
 1.	DevOps Engineers build the CI pipeline: Code + CQA + Create Docker image + scan the image + tag and push the image into Docker Hub + Run the application in Docker containers + Migrate and run in Kubernetes.
 Note: It is a PHP application. So, there is no Build & test stage in Jenkins pipeline stage.
 
@@ -19,6 +21,7 @@ Scan the Image – Trivy
 Cluster – Kops cluster
 
 # Step: 1: Launch an Ec2 instance and install Git, Jenkins, Docker, SonarQube, Trivy in the server.
+
 Server configuration: M7i-Flex.large, EBS volume: 28 Gb storage, Keypair, Security Group – Allow all traffic, Attach IAM role with Full access.
 <img width="1917" height="906" alt="Screenshot 2026-04-11 105908" src="https://github.com/user-attachments/assets/2a7954c5-aed8-4324-a038-2ba361a59812" />
 
