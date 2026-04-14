@@ -209,6 +209,23 @@ curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s htt
  mv kops /usr/local/bin/kops
  kops version
 
+ <img width="600" height="438" alt="Screenshot 2026-04-12 125317" src="https://github.com/user-attachments/assets/05ad42fa-9414-40e7-8819-3e0d51d5cbf1" />
+
+# KOPS – Cluster:
+
+Here we are using kops cluster to deploy application in Kubernetes. Now apply below commands to create cluster.
+1.	Create s3 bucket first.
+Create S3 bucket in AWS cloud -> aws s3 mb s3://damodhar2.k8s.flm
+Command to check list of buckets -> aws s3 ls
+
+2.	Apply below commands to create Kops cluster
+
+** export KOPS_STATE_STORE=s3://damodhar2.k8s.flm
+kops create cluster --name damodhar2.k8s.local --zones=us-east-1a,us-east-1b --master-size m7i-flex.large --master-count 1 --master-volume-size 30 --node-size c7i-flex.large --node-count 3 --node-volume-size 30 --image=ami-0ec10929233384c7f**
+    **kops update cluster --name damodhar2.k8s.local --yes --admin    --> update the cluster**
+
+
+
 
 
         
