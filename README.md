@@ -225,6 +225,123 @@ Command to check list of buckets -> aws s3 ls
 
    # kops update cluster --name damodhar2.k8s.local --yes --admin    --> update the cluster
 
+<img width="1809" height="680" alt="Screenshot 2026-04-12 125453" src="https://github.com/user-attachments/assets/4fea8873-7ec5-4617-b945-a47ee382ab5f" />
+<img width="1722" height="822" alt="Screenshot 2026-04-12 125541" src="https://github.com/user-attachments/assets/ddea66f9-29d4-47b6-a729-2703c64ea59a" />
+
+•	In Kops cluster will create manager nodes, Worker nodes, Volumes, Load balancers, Security groups, and Auto scaling groups.
+
+<img width="1919" height="917" alt="Screenshot 2026-04-12 125902" src="https://github.com/user-attachments/assets/829d78e3-5642-4140-850c-b9f74324d869" />
+<img width="1906" height="729" alt="Screenshot 2026-04-12 130224" src="https://github.com/user-attachments/assets/e7789af5-3a9e-44a4-8b65-2bb04d504e2e" />
+<img width="1917" height="718" alt="Screenshot 2026-04-12 130313" src="https://github.com/user-attachments/assets/5dd849d1-4f6c-47ce-98fc-29de584c079b" />
+<img width="1916" height="667" alt="Screenshot 2026-04-12 130340" src="https://github.com/user-attachments/assets/0062ec90-5d17-494f-82a2-bfc26be287ce" />
+<img width="1912" height="802" alt="Screenshot 2026-04-12 130413" src="https://github.com/user-attachments/assets/f0927bfd-d156-42a3-8cb9-c8d2b2b28bf9" />
+
+•	Now write the respective yaml files to run the application in Kubernetes KOPS cluster. 
+
+1.	Deployment – To run an application (Deploymenmt+Resources+livenessprobe+readynessprobe)
+2.	 StatefulSet – database (Statefulset+resources+secrets+Volumes)
+3.	Volume – to store the data and always available
+4.	HPA – based on the traffic pods will increase and decrease (install metric server)
+5.	Configmaps – to store configuration data
+6.	Secrets – To store application credentials
+7.	Namespace – To isolate the application resources
+8.	Resource Quota – Use limit resources to provide quality of service
+9.	Network policies – to communicate particular pods
+10.	Ingress – Route the traffic and SSHL termination
+11.	Probes - check the container status
+12.	Prometheus & Grafana - for monitoring
+13.	Services – To expose and access our application
+14.	PDB – pod disruption budget (if version upgrade - minimum how many pods are running)
+
+•	Write all yaml files and execute in the server. Yaml files are uploaded in Master branch.
+
+<img width="846" height="864" alt="Screenshot 2026-04-12 163559" src="https://github.com/user-attachments/assets/8b589677-953c-49b9-9d3b-9205b6d6915b" />
+
+•	Before execute yaml files we must install metric server and ingress in the server because yaml file will execute if these available in server.
+
+# Install Metric server Command:
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+<img width="1790" height="343" alt="Screenshot 2026-04-12 164103" src="https://github.com/user-attachments/assets/3958a456-e857-454b-96e9-07490e401715" />
+
+# Install Ingress command:
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.0/deploy/static/provider/cloud/deploy.yaml
+
+<img width="1840" height="539" alt="Screenshot 2026-04-12 164347" src="https://github.com/user-attachments/assets/8b238244-9450-4d13-936c-20e1504aed39" />
+
+•	Now execute all yaml files. We will get the below output. If any error in yaml, do the troubleshoot and fix the issue.
+
+# Command:    
+   Kubectl create -f .    -> Apply this command to execute the yaml file first time 
+   kubectl apply -f .      -> Execute this command if any changes done in yaml file
+   
+ <img width="843" height="273" alt="Screenshot 2026-04-12 214546" src="https://github.com/user-attachments/assets/d3ac01ae-575e-4277-9aac-52531ab25980" />
+<img width="1850" height="507" alt="Screenshot 2026-04-12 214848" src="https://github.com/user-attachments/assets/b55d7c8f-8f98-48c1-b223-a951a00edb58" />
+
+•	Now check all the Kubernetes objects
+
+# Kubectl get po  -> check the pods
+
+<img width="905" height="133" alt="Screenshot 2026-04-13 191242" src="https://github.com/user-attachments/assets/08769fc7-6c34-4b8c-9af2-fb7934093f40" />
+
+# Kubectl get svc    -> Check the service 
+
+<img width="979" height="137" alt="Screenshot 2026-04-13 191313" src="https://github.com/user-attachments/assets/2fe26fc0-6cbd-4d86-b648-f521b0de5e81" />
+
+# Deployment  -> Replication set -> pods -> containers
+ #  Kubectl get deploy   -> Check the deployment
+
+<img width="855" height="83" alt="Screenshot 2026-04-13 191335" src="https://github.com/user-attachments/assets/81e7d9a2-2126-4fa7-ba84-feed4246bb9f" />
+
+#   Kubectl get netpol   -> Check the network policy
+
+<img width="1355" height="117" alt="Screenshot 2026-04-13 191402" src="https://github.com/user-attachments/assets/f2a2c145-5bc4-49e9-865c-9dfd79301efd" />
+
+# Kubectl get ingress  -> Check the ingress DNS name. Through DNS name access the application.
+
+<img width="1523" height="181" alt="Screenshot 2026-04-13 191412" src="https://github.com/user-attachments/assets/af1bc105-8a2b-40a5-9d74-6852c657ce3f" />
+
+# Access the application below DNS name:
+
+
+                       ..\httpa409fb495a37944c5b1f4e1d28699697-1788859896.us-east-1.elb.amazonaws.comblood-donation-facts.html.html
+
+
+                       <img width="1919" height="934" alt="Screenshot 2026-04-11 171930" src="https://github.com/user-attachments/assets/6d2052fc-d2a7-40cc-933e-fb33cad93b8d" />
+
+
+
+# Heads-up: 
+
+1.	When write the secret yaml file, first encode the USERNAME & PASSWORD. 
+
+                            echo -n "root" | base64
+  	
+  	<img width="663" height="116" alt="Screenshot 2026-04-12 143335" src="https://github.com/user-attachments/assets/dee62381-55f6-4af1-b233-3d9549736f58" />
+
+                          echo -n "admin123" | base64
+
+   <img width="714" height="78" alt="Screenshot 2026-04-12 143456" src="https://github.com/user-attachments/assets/db95550e-f656-41d0-8faf-056f38258f9b" />
+
+
+2.	When execute the Yaml files get some errors, troubleshoot all the erorrs.
+   
+Ex: when access the application through DNS name make sure labels should be correct in all yaml files. 
+Means i) Deployment label and app-service label should be same label name.
+                          ii) Stateful set label and db-service label name should be same label name.
+
+
+  
+
+   
+
+
+
+
+
+
 
 
 
