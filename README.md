@@ -194,6 +194,7 @@ install required plugins and add docker Hub credentials in Jenkins CI server.
 
 •	Get the source code from GitHub and create CI/CD pipeline in Jenkins to automate the deployment process and create Docker images and tagged & push the images into docker hub registry. Then run the application in containers successfully. All this process we automate in Jenkins.
 •	Now deploy the same application in Kubernetes why means high availability and no down time, update the versions & Rollback to any versions.
+
 **Install Kubectl and Kops**:
 
 Kubectl:
