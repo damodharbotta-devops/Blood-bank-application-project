@@ -222,6 +222,7 @@ Command to check list of buckets -> aws s3 ls
 
 ** export KOPS_STATE_STORE=s3://damodhar2.k8s.flm
 kops create cluster --name damodhar2.k8s.local --zones=us-east-1a,us-east-1b --master-size m7i-flex.large --master-count 1 --master-volume-size 30 --node-size c7i-flex.large --node-count 3 --node-volume-size 30 --image=ami-0ec10929233384c7f**
+
     **kops update cluster --name damodhar2.k8s.local --yes --admin    --> update the cluster**
 
 
